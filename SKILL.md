@@ -11,9 +11,20 @@ The user converses through `$target_doc` (default is `devlog.md`), not the termi
 
 1. **Resolve `$target_doc` in the repo root.** 
 
-Create it if doesn't exist. Add an empty `STATUS` block and a round using the template below to hold the user's request.
+If it doesn't exist yet, this is a fresh init: write a `STATUS` block reflecting the empty/starting state, then a single open `Ask` header (`A-001`) with a bare `+` bullet and nothing after it — no placeholder text, no Reply section. Stop there and wait; do not fabricate an ask or answer one that hasn't been asked. Exact shape:
 
-If it exists, read the **STATUS block + the last ask/reply round** — that is sufficient to be current; the full history lives in `devlog.archive.md` and is optional reference, not required reading.
+```
+# STATUS
+<starting state: nothing proven yet, no code, waiting on first ask>
+
+---
+
+# → Ask / A-001
+
++
+```
+
+If it already exists, read the **STATUS block + the last ask/reply round** — that is sufficient to be current; the full history lives in `devlog.archive.md` and is optional reference, not required reading.
 
 2. **Answer in the file, not in chat.** Append a Reply block (template below). The Reply is the real deliverable — everything you'd otherwise explain in the terminal goes there. Terminal output for a normal round is exactly one line: `$target_doc updated`. Do not restate or summarize the Reply again in terminal. Highlight all questions you need answers from the user, or try to batch questions at one location so it's easier for user to see and answer. Must provide suggested default answers to each question you ask.
 
