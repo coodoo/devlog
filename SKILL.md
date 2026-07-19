@@ -11,7 +11,7 @@ The user converses through `$target_doc` (default is `devlog.md`), not the termi
 
 1. **Resolve `$target_doc` in the repo root.** 
 
-If it doesn't exist, create it, then prepend one line on top: `* follow instructions from the installed agv5 skill's actions/devlog_protocol.md for protocols to operate this file.` Add an empty `STATUS` block and a round using the template below to hold the user's request.
+Create it if doesn't exist. Add an empty `STATUS` block and a round using the template below to hold the user's request.
 
 If it exists, read the **STATUS block + the last ask/reply round** — that is sufficient to be current; the full history lives in `devlog.archive.md` and is optional reference, not required reading.
 
