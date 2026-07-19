@@ -26,7 +26,13 @@ If it doesn't exist yet, this is a fresh init: write a `STATUS` block reflecting
 
 If it already exists, read the **STATUS block + the last ask/reply round** — that is sufficient to be current; the full history lives in `devlog.archive.md` and is optional reference, not required reading.
 
-2. **Answer in the file, not in chat.** Append a Reply block (template below). The Reply is the real deliverable — everything you'd otherwise explain in the terminal goes there. Terminal output for a normal round is exactly one line: `$target_doc updated`. Do not restate or summarize the Reply again in terminal. Highlight all questions you need answers from the user, or try to batch questions at one location so it's easier for user to see and answer. Must provide suggested default answers to each question you ask.
+2. **Answer in the file, not in chat.** Append a Reply block (template below). The Reply is the real deliverable — everything you'd otherwise explain in the terminal goes there. 
+
+**Terminal output for a normal round is exactly one line: `$target_doc updated`**.
+
+**Do not restate or summarize the Reply again in terminal**. 
+
+Highlight all questions you need answers from the user, or try to batch questions at one location so it's easier for user to see and answer. Must provide suggested default answers to each question you ask.
 
 3. **Context-saving check:** if the opening prompt points at a self-contained file (`continue working on @$target_doc`, `pick up @notes.md`) and the session still carries old turns, remind the user ONCE that `/clear` + re-reading from disk is cheaper. Skip if the session is fresh.
 
@@ -98,3 +104,5 @@ The live file holds only STATUS, references, and the current era's rounds — ke
 - The $target_doc is the HUMAN dialogue record; machine truth lives in each run's event log (`events.jsonl`, rendered by `agv5/viewer.js`). The $target_doc persuades; the event log proves. Never confuse the two.
 
 - Single writer: never run two sessions appending to the $target_doc concurrently.
+
+REMINDER: **Terminal output for a normal round is exactly one line: `$target_doc updated`**.
